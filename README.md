@@ -3,7 +3,11 @@
 sed -i 's#https\?://[a-zA-Z0-9.]*#https://mirrors.tencentyun.com#g' /etc/apt/sources.list
 ```
 
-
+# git no ssl
+```bash
+export GIT_SSL_NO_VERIFY=1
+git config http.sslVerify false
+```
 
 # matlab
 
