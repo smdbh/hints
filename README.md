@@ -27,3 +27,42 @@ p = patch( isosurface( x, y, z, Ellipsoid, -v(10) ) );
 set( p, 'FaceColor', 'g', 'EdgeColor', 'none' );
 alpha(p, 0.5); % 设置透明度为 0.5
 ```
+
+## C
+```
+
+#ifndef MIN
+#define MIN(a, b)           (((a) < (b))?(a) : (b))
+#endif /* MIN */
+
+#ifndef MAX
+#define MAX(a, b)           (((a) > (b))?(a) : (b))
+#endif /* MAX */
+
+#ifndef ARRAY_SZ
+#define ARRAY_SZ(arr)       (sizeof(arr) / sizeof((arr)[0]))
+#endif
+
+#ifdef __LITTLE_ENDIAN__
+#define BE16(x) \
+    (uint16_t)((((uint16_t)(x) & 0x00ff) << 8) | \
+              (((uint16_t)(x) & 0xff00) >> 8) )
+
+#define BE32(x) \
+    (uint32_t)((((uint32_t)(x) & 0xFF000000) >> 24) | \
+              (((uint32_t)(x) & 0x00FF0000) >> 8) | \
+              (((uint32_t)(x) & 0x0000FF00) << 8) | \
+              (((uint32_t)(x) & 0x000000FF) << 24))
+#else
+#define BE16(x) (x)
+#define BE32(x) (x)
+#endif
+
+
+#define SET_BITS(value, bits)               ((value) |= (bits))
+#define CLEAR_BITS(value, bits)             ((value) &= ~(bits))
+#define CHECK_BITS(value, bits)             (((value) & (bits)) > 0 ? 1 : 0)
+
+
+
+```
