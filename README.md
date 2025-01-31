@@ -1,3 +1,12 @@
+
+# 配置安装
+
+```bash
+curl https://raw.githubusercontent.com/smdbh/hint/refs/heads/main/arch_init.sh | bash
+
+wget -qO- https://raw.githubusercontent.com/smdbh/hint/refs/heads/main/ubuntu_init.sh | bash
+```
+
 # 通用替换源
 ```bash
 sed -i 's#https\?://[a-zA-Z0-9.]*#https://mirrors.tencentyun.com#g' /etc/apt/sources.list
