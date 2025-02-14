@@ -1,11 +1,19 @@
 #!/bin/bash
 
-APP_SOFTWARE=" byobu samba zsh htop zip unzip curl fail2ban 
-               git wget tree net-tools openssh-server locate"
+APP_SOFTWARE="zip unzip curl git wget net-tools"
+APT_HOST='https://mirrors.ustc.edu.cn'
 
 # repo settings
+version=$(lsb_release -rs)
 
-sed -i 's#https\?://[a-zA-Z0-9.]*#https://mirrors.ustc.edu.cn/ubuntu#g' /etc/apt/sources.list
+if [[ "$version" == "24.04" ]]; then
+    ${SUDO} sed -i "s#https\?://[a-zA-Z0-9.]*#${APT_HOST}#g" /etc/apt/sources.list.d/ubuntu.sources
+else
+    ${SUDO} sed -i "s#https\?://[a-zA-Z0-9.]*#${APT_HOST}#g" /etc/apt/sources.list
+fi
+
+
+
 
 ${SUDO} apt update
 ${SUDO} apt install -y ${APP_SOFTWARE} 
