@@ -11,7 +11,7 @@ if [[ $UID -ne 0 ]]; then
 fi
 
 
-if [[ "$version" >= "24.04" ]]; then
+if [[ "$version" > "24.01" ]]; then
     ${SUDO} sed -i "s#https\?://[a-zA-Z0-9.]*#${APT_HOST}#g" /etc/apt/sources.list.d/ubuntu.sources
 else
     ${SUDO} sed -i "s#https\?://[a-zA-Z0-9.]*#${APT_HOST}#g" /etc/apt/sources.list
