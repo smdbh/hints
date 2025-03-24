@@ -1,4 +1,13 @@
 
+# scrcpy
+ (https://github.com/Genymobile/scrcpy)
+```
+scrcpy --video-codec=h265 --max-size=1920 --max-fps=60 --no-audio --keyboard=uhid
+scrcpy --video-source=camera --camera-size=1920x1080 --camera-facing=front --v4l2-sink=/dev/video2 --no-playback
+scrcpy --gamepad=uhid
+
+```
+
 # 配置安装
 
 ```bash
