@@ -46,6 +46,31 @@ set( p, 'FaceColor', 'g', 'EdgeColor', 'none' );
 alpha(p, 0.5); % 设置透明度为 0.5
 ```
 
+## 动画
+ data 是个fifo, 画图每次都是重新配置
+```m
+for i = 1:2000
+    d = i/100;
+    d = complex( cos(d), sin(d));
+
+    data = [data(2:end), d];   % a queue
+    
+    hold on;
+    xlim([-3 3]);  % for right turn
+    ylim([-3 3]);
+    axis on;
+    grid on;
+    plot(real(data),imag(data),'red');
+
+    drawnow limitrate;
+    hold off;
+    clf;
+
+end
+
+```
+
+
 ## C
 ```
 
