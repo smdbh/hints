@@ -23,4 +23,4 @@ fi
 ${SUDO} apt update
 ${SUDO} apt install -y ${APP_SOFTWARE} 
 
-git clone  https://e.coding.net/smdbh/code/myconfig
+git clone  https://gitlab.com/smdbh-code/home/myconfig

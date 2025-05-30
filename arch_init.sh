@@ -13,4 +13,4 @@ ${SUDO} pacman -Sy --noconfirm  ${PAC_SOFTWARE}
 
 
 
-git clone -b arch https://e.coding.net/smdbh/code/myconfig
+git clone -b arch https://gitlab.com/smdbh-code/home/myconfig
