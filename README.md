@@ -102,6 +102,15 @@ end
 #endif
 
 
+#define REG_RD16(addr) (*(volatile uint16_t *)(addr))
+#define REG_RD32(addr) (*(volatile uint32_t *)(addr))
+
+#define REG_WR16(addr, val)  (*(uint16_t *)(addr) = (val))
+#define REG_WR32(addr, val)  (*(uint32_t *)(addr) = (val))
+
+
+
+
 #define SET_BITS(value, bits)               ((value) |= (bits))
 #define CLEAR_BITS(value, bits)             ((value) &= ~(bits))
 #define CHECK_BITS(value, bits)             (((value) & (bits)) > 0 ? 1 : 0)
