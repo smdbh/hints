@@ -118,3 +118,16 @@ end
 
 
 ```
+
+
+# C++
+读取时间
+```
+uint64_t get_ms(void)
+{
+    return std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::system_clock::now().time_since_epoch()
+        ).count();
+}
+
+```
